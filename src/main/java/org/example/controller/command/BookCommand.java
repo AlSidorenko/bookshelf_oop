@@ -14,6 +14,6 @@ public class BookCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        return "/books.jsp";
+        return "/WEB-INF/jsp/books.jsp";
     }
 }

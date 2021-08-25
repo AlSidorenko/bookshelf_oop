@@ -8,4 +8,11 @@ package org.example.model.entity;
  * @since 0.1.
  */
 public class Book {
+
+    private String nameBook;
+    private Author author;
+    private String genre;
+    private String fileLink;
+    private String fotoBook;
+    private int ratingBook;
 }
