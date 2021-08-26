@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Александр
-  Date: 16.08.2021
-  Time: 23:32
+  Date: 26.08.2021
+  Time: 13:26
   To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -22,7 +22,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.87.0">
 
-    <title>Authors OOP</title>
+    <title>Add Author OOP</title>
 
     <!-- Favicon -->
     <link rel="icon" href="${pageContext.request.contextPath}/static/icon/favicon.ico">
@@ -72,56 +72,52 @@
 <br/>
 
 <div class="container-fluid col-lg-10 col-lg-offset-2 mt-3 pb-2 text-center">
-    <h2>Authors List</h2>
+    <h2>Add New Author</h2>
 </div>
 
-<!-- put new button: Add Author -->
-<div class="container-fluid col-lg-10 col-lg-offset-2 mt-3 pb-2">
-    <input type="button" value="Add Author"
-           onclick="window.location.href='${pageContext.request.contextPath}/bookshelf/add_authors';
-           return false;"
-           class="btn btn-primary"/>
-</div> <!--/ put new button: Add Author -->
+<div class="container">
+    <div class="row ">
+        <div class="col-md-12 mb-2 mt-4">
+            <form action="${pageContext.request.contextPath}/bookshelf/add_authors" method="GET" class="form-sigin">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="name_author">Name</label>
+                        <input type="text" class="form-control" name="name_author" id="name_author" placeholder="" value="" required>
+                    </div>
 
-<div class="container-fluid col-lg-10 col-lg-offset-2 mt-3 pb-2 text-center ">
-    <table class="table my-5">
-        <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Location</th>
-            <th scope="col">Dates</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Photo</th>
-            <th scope="col">Link</th>
-        </tr>
-        </thead>
+                    <div class="col-md-6 mb-3">
+                        <label for="country">Location</label>
+                        <input type="text" class="form-control" name="country" id="country" placeholder="" value="" required>
+                    </div>
+                </div>
 
-        <tbody>
-        <c:forEach var="author" items="${AUTHORS_LIST}">
-            <tr>
-                <td>${author.idAuthor}</td>
-                <td>${author.nameAuthor}</td>
-                <td>${author.country}</td>
-                <td>${author.datesOfLife}</td>
-                <td>${author.gender}</td>
-                <td>${author.photoAuthor}</td>
-                <td>${author.linkBiography}</td>
-                <td>
-                    <a href="${tempLink}">Update</a>
-                    |
-                    <a href="${deleteLink}"
-                       onclick="if (!(confirm('Are you sure you want to delete this student?'))) return false">
-                        Delete</a>
-                </td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-</div>
+                <div class="mb-3">
+                    <label for="dates_life">Dates</label>
+                    <input type="text" class="form-control" name="dates_life" id="dates_life" placeholder="" required>
+                </div>
 
-<br/>
-<a href="${pageContext.request.contextPath}/bookshelf/main">Main</a>
+                <div class="mb-3">
+                    <label for="gender">Gender</label>
+                    <input type="text" class="form-control" name="gender" id="gender" placeholder="" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="photo_author">Photo</label>
+                    <input type="text" class="form-control" name="photo_author" id="photo_author" placeholder="" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="link_biography">Link</label>
+                    <input type="text" class="form-control" name="link_biography" id="link_biography" placeholder="" required>
+                </div>
+
+                <br/>
+                <hr class="mb-4">
+                <button class="btn btn-lg btn-primary btn-block" type="submit" value="Enter" class="submit">Add Author</button>
+            </form>
+        </div>
+    </div>
+</div> <!-- /container -->
 
 </body>
 </html>

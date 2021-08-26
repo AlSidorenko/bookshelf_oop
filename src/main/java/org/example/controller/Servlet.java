@@ -1,9 +1,6 @@
 package org.example.controller;
 
-import org.example.controller.command.AuthorCommand;
-import org.example.controller.command.BookCommand;
-import org.example.controller.command.Command;
-import org.example.controller.command.MainCommand;
+import org.example.controller.command.*;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -30,6 +27,7 @@ public class Servlet extends HttpServlet {
         commands.put("main", new MainCommand());
         commands.put("books", new BookCommand());
         commands.put("authors", new AuthorCommand());
+        commands.put("add_authors", new AddAuthorCommand());
     }
 
     @Override

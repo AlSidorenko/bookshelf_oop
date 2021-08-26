@@ -18,8 +18,6 @@ import java.util.Properties;
  */
 public class AuthorCommand implements Command {
 
-
-
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
 

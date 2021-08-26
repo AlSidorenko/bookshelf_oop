@@ -28,6 +28,16 @@ public class Author {
         this.linkBiography = linkBiography;
     }
 
+    public Author(String nameAuthor, String country, String datesOfLife,
+                  String gender, String photoAuthor, String linkBiography) {
+        this.nameAuthor = nameAuthor;
+        this.country = country;
+        this.datesOfLife = datesOfLife;
+        this.gender = gender;
+        this.photoAuthor = photoAuthor;
+        this.linkBiography = linkBiography;
+    }
+
     public int getIdAuthor() {
         return idAuthor;
     }
