@@ -4,8 +4,13 @@ import org.example.model.entity.Author;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
+import java.sql.Blob;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.Properties;
 
@@ -50,8 +55,30 @@ public class AuthorCommand implements Command {
                 String country = rs.getString(3);
                 String dates = rs.getString(4);
                 String gender = rs.getString(5);
-                String photo = rs.getString(6);
+                //String photo = rs.getString(6);
+                // TODO
+                //Blob blob = rs.getBlob("image");
+
+                Blob photo = rs.getBlob(6);
+
+                InputStream inputStream = photo.getBinaryStream();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+
+                byte[] imageBytes = outputStream.toByteArray();
+                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+
+
+                inputStream.close();
+                outputStream.close();
+
                 String link = rs.getString(7);
+                // close
 
                 lst.add(
                         new Author(id, name, country, dates, gender, photo, link)
@@ -82,8 +109,8 @@ public class AuthorCommand implements Command {
                     System.err.println("Connection close error: " + e);
                 }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException | IOException ex) {
+            ex.printStackTrace();
         }
         return lst;
     }

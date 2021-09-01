@@ -1,5 +1,7 @@
 package org.example.model.entity;
 
+import java.sql.Blob;
+
 /**
  * Created on 17.08.2021 13:24.
  *
@@ -14,11 +16,11 @@ public class Author {
     private String country;
     private String datesOfLife;
     private String gender;
-    private String photoAuthor;
+    private Blob photoAuthor;
     private String linkBiography;
 
     public Author(int idAuthor, String nameAuthor, String country, String datesOfLife,
-                  String gender, String photoAuthor, String linkBiography) {
+                  String gender, Blob photoAuthor, String linkBiography) {
         this.idAuthor = idAuthor;
         this.nameAuthor = nameAuthor;
         this.country = country;
@@ -29,7 +31,7 @@ public class Author {
     }
 
     public Author(String nameAuthor, String country, String datesOfLife,
-                  String gender, String photoAuthor, String linkBiography) {
+                  String gender, Blob photoAuthor, String linkBiography) {
         this.nameAuthor = nameAuthor;
         this.country = country;
         this.datesOfLife = datesOfLife;
@@ -58,7 +60,7 @@ public class Author {
         return gender;
     }
 
-    public String getPhotoAuthor() {
+    public Blob getPhotoAuthor() {
         return photoAuthor;
     }
 

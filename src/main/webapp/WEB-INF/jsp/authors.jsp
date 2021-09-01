@@ -72,7 +72,7 @@
 <br/>
 
 <div class="container-fluid col-lg-10 col-lg-offset-2 mt-3 pb-2 text-center">
-    <h2>Authors List</h2>
+    <h2>List Of Authors</h2>
 </div>
 
 <!-- put new button: Add Author -->
@@ -105,8 +105,9 @@
                 <td>${author.country}</td>
                 <td>${author.datesOfLife}</td>
                 <td>${author.gender}</td>
-                <td>${author.photoAuthor}</td>
-                <td>${author.linkBiography}</td>
+                <%-- <td>${author.photoAuthor}</td> --%>
+                <td><img src="data:image/jpg;base64,${author.photoAuthor}" width="120" height="150" /></td>
+                <td><a href="${author.linkBiography}">Link Biography</a></td>
                 <td>
                     <a href="${tempLink}">Update</a>
                     |
@@ -119,9 +120,6 @@
         </tbody>
     </table>
 </div>
-
-<br/>
-<a href="${pageContext.request.contextPath}/bookshelf/main">Main</a>
 
 </body>
 </html>

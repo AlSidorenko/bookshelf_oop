@@ -102,8 +102,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="photo_author">Photo</label>
-                    <input type="text" class="form-control" name="photo_author" id="photo_author" placeholder="" required>
+                    <%-- <label for="photo_author">Photo</label>
+                    <input type="text" class="form-control" name="photo_author" id="photo_author" placeholder="" required> --%>
+
+                    <label for="photo_author" class="text-black">Add Photo<span class="text-danger"> </span></label>
+                    <input type="file" class="photo_author"  name="photo_author" id="photo_author"
+                           placeholder="Enter Image" value="#" >
                 </div>
 
                 <div class="mb-3">
