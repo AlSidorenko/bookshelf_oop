@@ -98,6 +98,7 @@
         </thead>
 
         <tbody>
+        <jsp:useBean id="AUTHORS_LIST" scope="request" type="java.util.List"/>
         <c:forEach var="author" items="${AUTHORS_LIST}">
             <tr>
                 <td>${author.idAuthor}</td>
@@ -105,7 +106,7 @@
                 <td>${author.country}</td>
                 <td>${author.datesOfLife}</td>
                 <td>${author.gender}</td>
-                <td><img src="${author.photoAuthor}" width="120" height="150" /></td>
+                <td><img src="${author.photoAuthor}" width="120" height="150" alt="${author.photoAuthor}"/></td>
                 <td><a href="${author.linkBiography}">Link Biography</a></td>
                 <td>
                     <a href="${tempLink}">Update</a>
