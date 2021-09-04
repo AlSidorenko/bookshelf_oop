@@ -16,11 +16,11 @@ public class Author {
     private String country;
     private String datesOfLife;
     private String gender;
-    private Blob photoAuthor;
+    private String photoAuthor;
     private String linkBiography;
 
     public Author(int idAuthor, String nameAuthor, String country, String datesOfLife,
-                  String gender, Blob photoAuthor, String linkBiography) {
+                  String gender, String photoAuthor, String linkBiography) {
         this.idAuthor = idAuthor;
         this.nameAuthor = nameAuthor;
         this.country = country;
@@ -31,12 +31,21 @@ public class Author {
     }
 
     public Author(String nameAuthor, String country, String datesOfLife,
-                  String gender, Blob photoAuthor, String linkBiography) {
+                  String gender, String photoAuthor, String linkBiography) {
         this.nameAuthor = nameAuthor;
         this.country = country;
         this.datesOfLife = datesOfLife;
         this.gender = gender;
         this.photoAuthor = photoAuthor;
+        this.linkBiography = linkBiography;
+    }
+
+    public Author(String nameAuthor, String country, String datesOfLife,
+                  String gender, String linkBiography) {
+        this.nameAuthor = nameAuthor;
+        this.country = country;
+        this.datesOfLife = datesOfLife;
+        this.gender = gender;
         this.linkBiography = linkBiography;
     }
 
@@ -60,12 +69,16 @@ public class Author {
         return gender;
     }
 
-    public Blob getPhotoAuthor() {
+    public String getPhotoAuthor() {
         return photoAuthor;
     }
 
     public String getLinkBiography() {
         return linkBiography;
+    }
+
+    public void setPhotoAuthor(String photoAuthor) {
+        this.photoAuthor = photoAuthor;
     }
 
     @Override

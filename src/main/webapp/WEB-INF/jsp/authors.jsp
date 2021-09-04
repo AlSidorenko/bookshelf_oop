@@ -105,8 +105,7 @@
                 <td>${author.country}</td>
                 <td>${author.datesOfLife}</td>
                 <td>${author.gender}</td>
-                <%-- <td>${author.photoAuthor}</td> --%>
-                <td><img src="data:image/jpg;base64,${author.photoAuthor}" width="120" height="150" /></td>
+                <td><img src="${author.photoAuthor}" width="120" height="150" /></td>
                 <td><a href="${author.linkBiography}">Link Biography</a></td>
                 <td>
                     <a href="${tempLink}">Update</a>

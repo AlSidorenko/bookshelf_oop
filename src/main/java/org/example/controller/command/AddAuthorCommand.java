@@ -18,7 +18,7 @@ public class AddAuthorCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        /*String name = request.getParameter("name_author");
+        String name = request.getParameter("name_author");
         String country = request.getParameter("country");
         String dates = request.getParameter("dates_life");
         String gender = request.getParameter("gender");
@@ -30,15 +30,19 @@ public class AddAuthorCommand implements Command {
             return "/WEB-INF/jsp/add_author.jsp";
         }
 
-        Author author = new Author(name, country, dates, gender, photo, link);
+        StringBuilder sb = new StringBuilder("/media/");
+        sb.append(photo);
+        String photoLink = sb.toString();
+
+        Author author = new Author(name, country, dates, gender, link);
+        author.setPhotoAuthor(photoLink);
+
         create(author);
 
-        return "redirect:/authors";*/
-
-        return "";
+        return "redirect:/authors";
     }
 
-    /*public void create(Author author) {
+    public void create(Author author) {
         Connection cn = null;
         PreparedStatement ps = null;
 
@@ -68,9 +72,9 @@ public class AddAuthorCommand implements Command {
             // clean up JDBC objects
             close(cn, ps, null);
         }
-    }*/
+    }
 
-    /*private void setPrepareStatementsParameters(Author author, PreparedStatement ps)
+    private void setPrepareStatementsParameters(Author author, PreparedStatement ps)
             throws SQLException {
         ps.setString(1, author.getNameAuthor());
         ps.setString(2, author.getCountry());
@@ -94,5 +98,5 @@ public class AddAuthorCommand implements Command {
         } catch (Exception exc) {
             exc.printStackTrace();
         }
-    }*/
+    }
 }

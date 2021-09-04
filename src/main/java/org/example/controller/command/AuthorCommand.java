@@ -55,13 +55,10 @@ public class AuthorCommand implements Command {
                 String country = rs.getString(3);
                 String dates = rs.getString(4);
                 String gender = rs.getString(5);
-                //String photo = rs.getString(6);
+                String photo = rs.getString(6);
                 // TODO
                 //Blob blob = rs.getBlob("image");
-
-                Blob photo = rs.getBlob(6);
-
-                InputStream inputStream = photo.getBinaryStream();
+                /*InputStream inputStream = photo.getBinaryStream();
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                 byte[] buffer = new byte[4096];
                 int bytesRead = -1;
@@ -69,13 +66,11 @@ public class AuthorCommand implements Command {
                 while ((bytesRead = inputStream.read(buffer)) != -1) {
                     outputStream.write(buffer, 0, bytesRead);
                 }
-
                 byte[] imageBytes = outputStream.toByteArray();
                 String base64Image = Base64.getEncoder().encodeToString(imageBytes);
-
-
                 inputStream.close();
-                outputStream.close();
+                outputStream.close();*/
+
 
                 String link = rs.getString(7);
                 // close
@@ -109,7 +104,7 @@ public class AuthorCommand implements Command {
                     System.err.println("Connection close error: " + e);
                 }
             }
-        } catch (SQLException | IOException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace();
         }
         return lst;
