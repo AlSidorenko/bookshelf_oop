@@ -6,14 +6,8 @@
 
     <display-name>Archetype Created Web Application</display-name>
 
-    <servlet>
-        <servlet-name>Servl</servlet-name>
-        <servlet-class>org.example.controller.Servlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>Servl</servlet-name>
-        <url-pattern>/bookshelf/*</url-pattern>
-    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 
 </web-app>
